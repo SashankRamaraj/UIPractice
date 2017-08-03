@@ -1,0 +1,90 @@
+<!Doctype html>
+<html lang='en'>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <title>BootStrap Panels</title>
+</head>
+<body>
+<div class="container">
+  <h2>Input Controls</h2>
+  <div class="panel panel-info">
+    <div class="panel-heading">Supported Input Controls in BootStrap</div>
+    <div class="panel-body">Bootstrap supports the following form controls:
+<ul>
+<li>input</li>
+<li>textarea</li>
+<li>checkbox</li>
+<li>radio</li>
+</ul>
+</div>    
+  </div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-lg-6">
+     <label for="usr">Name:</label>
+  <input type="text" class="form-control" id="usr">
+	 </div>
+   <div class="col-lg-6">
+   <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+   </div>
+
+</div>
+<div class="row">
+  <div class="col-lg-6">
+  <label >Checkboxes:</label>
+  <div class="checkbox">
+  <label><input type="checkbox" value="">Option 1</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Option 2</label>
+</div>
+<div class="checkbox disabled">
+  <label><input type="checkbox" value="" disabled>Option 3</label>
+</div>
+  </div>
+  <div class="col-lg-6"></div>
+<label>Radio Buttons</label>
+<div class="radio">
+  <label><input type="radio" name="optradio">Option 1</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio">Option 2</label>
+</div>
+<div class="radio disabled">
+  <label><input type="radio" name="optradio" disabled>Option 3</label>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+  <label>Drop down menus (select lists):</label>
+  <form>
+    <div class="form-group">
+      <label for="sel1">Select list (select one):</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <br>
+      <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
+      <select multiple class="form-control" id="sel2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+	</div>
+</body>
+<html>

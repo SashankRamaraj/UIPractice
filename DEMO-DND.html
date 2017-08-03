@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<style type="text/css">
+
+#redBox {
+border:1px solid black;
+height:50px; 
+width:50px; 
+margin:10px; 
+background-color:red; 
+float:left;
+cursor:move;
+-moz-user-select:none;
+}
+#greenBox{
+border:1px solid black; 
+height:50px; 
+width:50px; 
+margin:10px; 
+background-color:green ;
+float:left;
+cursor:move;
+-moz-user-select:none;
+}
+#boxB{
+border:1px solid black; 
+height:50px; 
+width:50px; 
+margin:10px; 
+background-color:green ;
+float:left;
+cursor:move;
+-moz-user-select:none;
+}
+#boxA{
+border:1px solid black; 
+height:50px; 
+width:50px; 
+margin:10px; 
+background-color:red ;
+float:left;
+cursor:move;
+-moz-user-select:none;
+}
+#container1 {
+border:1px solid black;
+ height:500px; 
+ width:500px; 
+ margin:10px; 
+ padding:20px 30px; 
+ float:left
+
+}
+#container2{
+border:1px solid black;
+height:500px; 
+width:500px; 
+padding:10px; 
+margin:10px; 
+float:left
+}
+
+#dropRed{
+border:1px solid red; 
+height:100px; 
+width:300px; 
+margin:2px
+}
+
+#dropGreen{
+border:1px solid green; 
+height:100px; 
+width:300px; 
+margin:20px 2px
+}
+</style>
+
+<script type="text/javascript">
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+   ev.dataTransfer.setDragImage(ev.target,0,0);
+   return true;
+}
+function dragEnter(ev) {
+   event.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    return false;
+}
+function dragDrop(ev) {
+   var src = ev.dataTransfer.getData("Text");
+   ev.target.appendChild(document.getElementById(src));
+   ev.stopPropagation();
+    $(ev.target).effect("highlight", {}, 500);
+   return false;
+}
+</script>
+</head>
+<body>
+<center>
+<h1>Drag and drop HTML5 demo</h1>
+<div id="container1">
+<center>
+<div id="dropRed" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" ></div>
+<div id="dropGreen" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" ></div>
+</center>
+</div>
+
+<div id="container2" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)" >
+<div id="boxA" draggable="true" ondragstart="return dragStart(event)">   <p>Drag Me</p></div>
+<div id="greenBox" draggable="true" ondragstart="return dragStart(event)" > <p>Drag Me</p> </div>
+<div id="redBox" draggable="true" ondragstart="return dragStart(event)" > <p>Drag Me</p> </div>
+<div id="boxB" draggable="true" ondragstart="return dragStart(event) "> <p>Drag Me</p> </div>
+</div>
+</center>
+
+</body>
+</html>
